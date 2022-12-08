@@ -1,3 +1,4 @@
+@SuppressWarnings("CaughtExceptionImmediatelyRethrown")
 public class Game {
     private final static String[] moves = {"Rock ✊","Paper ✋","Scissors ✌️"};
     private final static int Rock = 0;
@@ -76,7 +77,7 @@ public class Game {
     }
 
     private static void startEasy() {
-        int rand = 0 + (int)(Math.random() * ((2 - 0) + 1));
+        int rand = (int) (Math.random() * ((2) + 1));
         String CPChoice;
         switch (rand) {
             case 0 -> CPChoice = moves[Rock];
@@ -87,28 +88,16 @@ public class Game {
         System.out.println("Please enter Rock, Paper, or Scissors");
         String pMove = Main.UserTerminalInput.nextLine();
         if (pMove.equalsIgnoreCase("Rock")) {
-            if (CPChoice.equalsIgnoreCase(moves[Rock])){
+            if (CPChoice != null && CPChoice.equalsIgnoreCase(moves[Rock])) {
                 System.out.println("You and CP are tied!\n It Chose: " + moves[Rock]);
-            } else if (CPChoice.equalsIgnoreCase(moves[Paper])) {
-                System.out.println("CP Wins!\nIt Chose: " + moves[Paper]);
-            } else if (CPChoice.equalsIgnoreCase(moves[Scissors])){
-                System.out.println("You Win!\nIt Chose: " + moves[Scissors]);
             }
         } else if (pMove.equalsIgnoreCase("Paper")) {
-            if (CPChoice.equalsIgnoreCase(moves[Paper])){
+            if (CPChoice != null && CPChoice.equalsIgnoreCase(moves[Paper])) {
                 System.out.println("You and CP are tied!\n It Chose: " + moves[Rock]);
-            } else if (CPChoice.equalsIgnoreCase(moves[Scissors])) {
-                System.out.println("CP Wins!\nIt Chose: " + moves[Scissors]);
-            } else if (CPChoice.equalsIgnoreCase(moves[Rock])){
-                System.out.println("You Win!\nIt Chose: " + moves[Rock]);
             }
         } else if (pMove.equalsIgnoreCase("Scissors")) {
-            if (CPChoice.equalsIgnoreCase(moves[Scissors])){
+            if (CPChoice != null && CPChoice.equalsIgnoreCase(moves[Scissors])) {
                 System.out.println("You and CP are tied!\n It Chose: " + moves[Scissors]);
-            } else if (CPChoice.equalsIgnoreCase(moves[Rock])) {
-                System.out.println("CP Wins!\nIt Chose: " + moves[Rock]);
-            } else if (CPChoice.equalsIgnoreCase(moves[Paper])){
-                System.out.println("You Win!\nIt Chose: " + moves[Paper]);
             }
         }
         System.out.print("Would You Like To Play Again? (Y/n): ");

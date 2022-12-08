@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
+@SuppressWarnings("UnnecessaryLocalVariable")
 public class Main {
-    public static Scanner UserTerminalInput = new Scanner(System.in);
-    public static void main(String[] args) throws InterruptedException {
+    public static final Scanner UserTerminalInput = new Scanner(System.in);
+    public static void main(String[] args) {
         Begin();
     }
 
