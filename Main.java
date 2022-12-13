@@ -1,3 +1,5 @@
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
 @SuppressWarnings("UnnecessaryLocalVariable")
@@ -6,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Begin();
     }
+
 
     public static void Begin() {
         String choice = getGamemode();
